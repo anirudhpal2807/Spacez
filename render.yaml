@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spacez-offers-page
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+

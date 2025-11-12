@@ -124,16 +124,25 @@ export default function OffersPage() {
         )}
 
         {activeTab === 'payment' && (
-          <div className="px-4 py-6">
+          <div className="px-4 py-6 space-y-6">
             <section>
               <h2 className="text-lg font-semibold mb-4 text-black">Payment offers:</h2>
-              <PaymentOfferItem
-                bank="HDFC BANK"
-                logo="+"
-                discount="10% OFF"
-                description="Get 10% off on booking above ₹1500"
-                colorClass="bg-gradient-to-b from-blue-500 to-blue-600"
-              />
+              <div className="space-y-4">
+                <PaymentOfferItem
+                  bank="HDFC BANK"
+                  logo="+"
+                  discount="10% OFF"
+                  description="Get 10% off on booking above ₹1500"
+                  colorClass="bg-gradient-to-b from-blue-500 to-blue-600"
+                />
+                <PaymentOfferItem
+                  bank="HAMMER"
+                  logo="H"
+                  discount="10% OFF"
+                  description="Get this gift voucher on booking above ₹3500"
+                  colorClass="bg-black"
+                />
+              </div>
             </section>
           </div>
         )}
