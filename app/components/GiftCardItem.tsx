@@ -1,6 +1,7 @@
 interface GiftCardItemProps {
   brand: string;
-  logo: string;
+  logo?: string;
+  logoPath?: string;
   amount: number;
   colorClass: string;
   description: string;
@@ -10,27 +11,58 @@ interface GiftCardItemProps {
 export default function GiftCardItem({
   brand,
   logo,
+  logoPath,
   amount,
   colorClass,
   description,
   onCollect,
 }: GiftCardItemProps) {
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden flex">
-      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-24 flex-shrink-0`}>
+    <div className="border border-gray-200 rounded-lg overflow-hidden flex relative">
+      {/* Left discount box with jagged edge */}
+      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-20 flex-shrink-0 relative`}>
         <div className="text-center">
-          <div className="text-xl font-bold transform -rotate-90 whitespace-nowrap origin-center">
+          <div className="text-base font-bold transform -rotate-90 whitespace-nowrap origin-center">
             ₹{amount}
           </div>
         </div>
+        {/* Jagged/zigzag edge on right side of discount box */}
+        <div className="absolute right-0 top-0 bottom-0 w-1 flex flex-col justify-around py-1">
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+        </div>
       </div>
-      <div className="flex-1 p-4">
+      
+      <div className="flex-1 p-4 bg-white">
         <div className="flex items-start justify-between mb-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white border border-gray-200 rounded flex items-center justify-center">
-              <span className="text-xs font-bold text-black">{logo}</span>
-            </div>
-            <h3 className="font-bold text-lg text-black">{brand}</h3>
+            {logoPath ? (
+              <div className="w-14 h-14 bg-white border border-gray-300 rounded flex items-center justify-center overflow-hidden p-1">
+                <img 
+                  src={logoPath} 
+                  alt={brand} 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ) : logo ? (
+              <div className="w-14 h-14 bg-white border border-gray-300 rounded flex items-center justify-center">
+                <span className="text-lg font-bold text-black">{logo}</span>
+              </div>
+            ) : null}
+            <h3 className="font-bold text-xl text-black">{brand}</h3>
           </div>
           <button
             onClick={onCollect}
@@ -39,8 +71,8 @@ export default function GiftCardItem({
             Collect
           </button>
         </div>
-        <p className="text-sm text-gray-600 mb-3">{description}</p>
-        <button className="text-sm text-[#C17A4A] font-medium hover:underline">
+        <p className="text-sm text-gray-500 mb-3 mt-4">{description}</p>
+        <button className="text-sm text-gray-500 font-medium hover:underline">
           Read more
         </button>
       </div>

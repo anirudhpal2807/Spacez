@@ -16,7 +16,7 @@ export default function PaymentOfferCard({
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <h2 className="text-lg font-bold mb-2 text-black">Payment offers:</h2>
-          <p className="text-base font-semibold mb-1">upto {discountPercentage}% Off</p>
+          <p className="text-base font-semibold mb-1 text-black">upto {discountPercentage}% Off</p>
           <p className="text-sm text-gray-700 mb-4">on {method}</p>
           <button
             onClick={onUnlockOffers}

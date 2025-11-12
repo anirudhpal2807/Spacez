@@ -20,12 +20,24 @@ export default function CouponCard({
   onReadMore,
 }: CouponCardProps) {
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden flex">
-      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-24 flex-shrink-0`}>
+    <div className="border border-gray-200 rounded-lg overflow-hidden flex relative">
+      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-24 flex-shrink-0 relative`}>
         <div className="text-center">
           <div className="text-xl font-bold transform -rotate-90 whitespace-nowrap origin-center">
             {discount}
           </div>
+        </div>
+        {/* Jagged/zigzag edge on right side of discount box */}
+        <div className="absolute right-0 top-0 bottom-0 w-1 flex flex-col justify-around py-1">
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
+          <div className="w-2 h-1.5 bg-white -mr-1"></div>
         </div>
       </div>
       <div className="flex-1 p-4">

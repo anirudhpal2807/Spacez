@@ -106,7 +106,7 @@ export default function OffersPage() {
           <div className="px-4 py-6 space-y-4">
             <GiftCardItem
               brand="MYNTRA"
-              logo="M"
+              logoPath="/LOGO/Myntra-Logo-2.svg"
               amount={1500}
               colorClass="bg-gradient-to-b from-pink-500 to-pink-600"
               description="Get this gift voucher on booking above ₹5000"
@@ -114,7 +114,7 @@ export default function OffersPage() {
             />
             <GiftCardItem
               brand="HAMMER"
-              logo="H"
+              logoPath="/logos/hammer.svg"
               amount={1000}
               colorClass="bg-black"
               description="Get this gift voucher on booking above ₹3500"
@@ -127,22 +127,13 @@ export default function OffersPage() {
           <div className="px-4 py-6 space-y-6">
             <section>
               <h2 className="text-lg font-semibold mb-4 text-black">Payment offers:</h2>
-              <div className="space-y-4">
-                <PaymentOfferItem
-                  bank="HDFC BANK"
-                  logo="+"
-                  discount="10% OFF"
-                  description="Get 10% off on booking above ₹1500"
-                  colorClass="bg-gradient-to-b from-blue-500 to-blue-600"
-                />
-                <PaymentOfferItem
-                  bank="HAMMER"
-                  logo="H"
-                  discount="10% OFF"
-                  description="Get this gift voucher on booking above ₹3500"
-                  colorClass="bg-black"
-                />
-              </div>
+              <PaymentOfferItem
+                bank="HDFC BANK"
+                logoPath="/LOGO/hdfc-bank-logo.svg"
+                discount="10% OFF"
+                description="Get 10% off on booking above ₹1500"
+                colorClass="bg-gradient-to-b from-blue-500 to-blue-600"
+              />
             </section>
           </div>
         )}
