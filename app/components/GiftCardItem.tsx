@@ -20,9 +20,9 @@ export default function GiftCardItem({
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden flex relative">
       {/* Left discount box with jagged edge */}
-      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-20 flex-shrink-0 relative`}>
+      <div className={`${colorClass} text-white p-4 flex items-center justify-center w-24 flex-shrink-0 relative`}>
         <div className="text-center">
-          <div className="text-base font-bold transform -rotate-90 whitespace-nowrap origin-center">
+          <div className="text-2xl font-bold transform -rotate-90 whitespace-nowrap origin-center">
             ₹{amount}
           </div>
         </div>
@@ -47,14 +47,14 @@ export default function GiftCardItem({
       </div>
       
       <div className="flex-1 p-4 bg-white">
-        <div className="flex items-start justify-between mb-2">
+        <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-2">
             {logoPath ? (
-              <div className="w-14 h-14 bg-white border border-gray-300 rounded flex items-center justify-center overflow-hidden p-1">
+              <div className="bg-white rounded overflow-hidden">
                 <img 
                   src={logoPath} 
                   alt={brand} 
-                  className="w-full h-full object-contain"
+                  className="h-12 w-auto object-contain"
                 />
               </div>
             ) : logo ? (
@@ -62,7 +62,6 @@ export default function GiftCardItem({
                 <span className="text-lg font-bold text-black">{logo}</span>
               </div>
             ) : null}
-            <h3 className="font-bold text-xl text-black">{brand}</h3>
           </div>
           <button
             onClick={onCollect}

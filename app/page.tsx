@@ -114,7 +114,7 @@ export default function OffersPage() {
             />
             <GiftCardItem
               brand="HAMMER"
-              logoPath="/logos/hammer.svg"
+              logoPath="/LOGO/hammer-logo.svg"
               amount={1000}
               colorClass="bg-black"
               description="Get this gift voucher on booking above ₹3500"
