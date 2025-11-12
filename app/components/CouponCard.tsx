@@ -23,7 +23,7 @@ export default function CouponCard({
     <div className="border border-gray-200 rounded-lg overflow-hidden flex relative">
       <div className={`${colorClass} text-white p-4 flex items-center justify-center w-24 flex-shrink-0 relative`}>
         <div className="text-center">
-          <div className="text-xl font-bold transform -rotate-90 whitespace-nowrap origin-center">
+          <div className="text-2xl font-bold transform -rotate-90 whitespace-nowrap origin-center">
             {discount}
           </div>
         </div>
